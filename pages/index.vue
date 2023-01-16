@@ -1,87 +1,103 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card>
+          <v-form>
+            <v-text-field
+              v-model="tankSize"
+              label="Gas Tank Size"
+              hint="Gallons"
+              placeholder="22"
+              outlined
+            ></v-text-field>
+
+            <v-slider
+              v-model="tankLevel"
+              :tick-labels="tankTicksLabels"
+              :max="8"
+              step="1"
+              ticks="always"
+            ></v-slider>
+            <h4>How many prices to compare?</h4>
+            <v-slider
+              v-model="stations"
+              :tick-labels="stationTickLabels"
+              :max="3"
+              step="1"
+              ticks="always"
+            ></v-slider>
+            <v-row>
+              <v-col v-for="(s, idx) in numberOfStations" :key="idx">
+                <h4>Station {{ stationsArr[idx] }}</h4>
+
+                <v-text-field
+                  v-model="priceModels[idx]"
+                  label="Price Per Gallon"
+                  placeholder="2.99"
+                  outlined
+                ></v-text-field>
+
+                <v-banner outlined>{{
+                  calculatedPrice(tankSize, currentTank, priceModels[idx])
+                }}</v-banner>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'IndexPage',
+  data() {
+    return {
+      tankSize: 0,
+      // tankLevel: 0,
+      tankTicksLabels: [
+        'E',
+        '1/8',
+        '1/4',
+        '3/8',
+        '1/2',
+        '5/8',
+        '3/4',
+        '7/8',
+        'F',
+      ],
+      tankArr: [1, 0.875, 0.75, 0.625, 0.5, 0.375, 0.25, 0.125, 0],
+      stations: 0,
+      stationTickLabels: [1, 2, 3, 4],
+      stationsArr: [1, 2, 3, 4],
+      priceModels: [0, 0, 0, 0],
+    }
+  },
+  computed: {
+    ...mapState(['storeTankLevel', 'selectedMake']),
+    numberOfStations() {
+      return this.stationsArr[this.stations]
+    },
+    currentTank() {
+      return this.tankArr[this.storeTankLevel]
+    },
+    tankLevel: {
+      get() {
+        return this.storeTankLevel
+      },
+      set(v) {
+        this.setTankLevel(v)
+      },
+    },
+  },
+
+  methods: {
+    ...mapActions(['setTankLevel']),
+    calculatedPrice(tankSize, currenttank, price) {
+      return (tankSize * currenttank * price).toFixed(2)
+    },
+  },
 }
 </script>
