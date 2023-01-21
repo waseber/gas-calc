@@ -4,8 +4,34 @@
       <v-col>
         <v-card>
           <v-form>
+            <v-row>
+              <v-col cols="12" md="4">
+                <v-select
+                  v-model="currentYear"
+                  :items="getYears"
+                  label="Year"
+                  outlined
+                ></v-select
+              ></v-col>
+              <v-col cols="12" md="4">
+                <v-select
+                  v-model="currentMake"
+                  :items="getMakes"
+                  label="Make"
+                  outlined
+                ></v-select
+              ></v-col>
+              <v-col cols="12" md="4">
+                <v-select
+                  v-model="currentModel"
+                  :items="getModels"
+                  label="Model"
+                  outlined
+                ></v-select
+              ></v-col>
+            </v-row>
             <v-text-field
-              v-model="tankSize"
+              v-model="getGasTank"
               label="Gas Tank Size"
               hint="Gallons"
               placeholder="22"
@@ -51,7 +77,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 export default {
   data() {
     return {
@@ -76,12 +102,43 @@ export default {
     }
   },
   computed: {
-    ...mapState(['storeTankLevel', 'selectedMake']),
+    ...mapState([
+      'carList',
+      'storeTankLevel',
+      'selectedYear',
+      'selectedMake',
+      'selectedModel',
+    ]),
+    ...mapGetters(['getYears', 'getMakes', 'getModels', 'getGasTank']),
     numberOfStations() {
       return this.stationsArr[this.stations]
     },
     currentTank() {
       return this.tankArr[this.storeTankLevel]
+    },
+    currentYear: {
+      get() {
+        return this.selectedYear
+      },
+      set(v) {
+        this.setSelectedYear(v)
+      },
+    },
+    currentMake: {
+      get() {
+        return this.selectedMake
+      },
+      set(v) {
+        this.setSelectedMake(v)
+      },
+    },
+    currentModel: {
+      get() {
+        return this.selectedMake
+      },
+      set(v) {
+        this.setSelectedModel(v)
+      },
     },
     tankLevel: {
       get() {
@@ -94,10 +151,20 @@ export default {
   },
 
   methods: {
-    ...mapActions(['setTankLevel']),
+    ...mapActions([
+      'loadCarList',
+      'setTankLevel',
+      'setSelectedMake',
+      'setSelectedModel',
+      'setSelectedYear',
+    ]),
     calculatedPrice(tankSize, currenttank, price) {
       return (tankSize * currenttank * price).toFixed(2)
     },
+  },
+  mounted() {
+    this.loadCarList()
+    console.log('>> ', this.carList)
   },
 }
 </script>

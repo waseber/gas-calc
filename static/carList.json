@@ -1,0 +1,320 @@
+[
+  {
+    "Year": 2017,
+    "Make": "Audi",
+    "Model": "Q7",
+    "Tank-Size": 22.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Bentley",
+    "Model": "Bentayga",
+    "Tank-Size": 22.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Cadillac",
+    "Model": "Escalade",
+    "Tank-Size": 26
+  },
+  {
+    "Year": 2017,
+    "Make": "Cadillac",
+    "Model": "Escalade ESV",
+    "Tank-Size": 31
+  },
+  {
+    "Year": 2017,
+    "Make": "Chevrolet",
+    "Model": "Suburban",
+    "Tank-Size": 31
+  },
+  {
+    "Year": 2017,
+    "Make": "Chevrolet",
+    "Model": "Tahoe",
+    "Tank-Size": 26
+  },
+  {
+    "Year": 2017,
+    "Make": "Dodge",
+    "Model": "Durango",
+    "Tank-Size": 24.6
+  },
+  {
+    "Year": 2017,
+    "Make": "Ford",
+    "Model": "Expedition",
+    "Tank-Size": 28
+  },
+  {
+    "Year": 2017,
+    "Make": "Ford",
+    "Model": "Expedition EL",
+    "Tank-Size": 33.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Ford",
+    "Model": "Flex",
+    "Tank-Size": 18.6
+  },
+  {
+    "Year": 2017,
+    "Make": "GMC",
+    "Model": "Yukon",
+    "Tank-Size": 26
+  },
+  {
+    "Year": 2017,
+    "Make": "GMC",
+    "Model": "Yukon XL",
+    "Tank-Size": 31
+  },
+  {
+    "Year": 2017,
+    "Make": "Infiniti",
+    "Model": "QX60",
+    "Tank-Size": 19.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Infiniti",
+    "Model": "QX60 Hybrid",
+    "Tank-Size": 19.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Infiniti",
+    "Model": "QX80",
+    "Tank-Size": 26
+  },
+  {
+    "Year": 2017,
+    "Make": "Land Rover",
+    "Model": "Range Rover",
+    "Tank-Size": 27.7
+  },
+  {
+    "Year": 2017,
+    "Make": "Lexus",
+    "Model": "LX 570",
+    "Tank-Size": 24.6
+  },
+  {
+    "Year": 2017,
+    "Make": "Lincoln",
+    "Model": "Navigator",
+    "Tank-Size": 28
+  },
+  {
+    "Year": 2017,
+    "Make": "Lincoln",
+    "Model": "Navigator L",
+    "Tank-Size": 33.5
+  },
+  {
+    "Year": 2017,
+    "Make": "Mazda",
+    "Model": "CX-9",
+    "Tank-Size": 19
+  },
+  {
+    "Year": 2017,
+    "Make": "Mercedes-AMG",
+    "Model": "GLS63",
+    "Tank-Size": 26.4
+  },
+  {
+    "Year": 2017,
+    "Make": "Mercedes-Benz",
+    "Model": "GLS-Class",
+    "Tank-Size": 26.4
+  },
+  {
+    "Year": 2017,
+    "Make": "Nissan",
+    "Model": "Armada",
+    "Tank-Size": 26
+  },
+  {
+    "Year": 2017,
+    "Make": "Toyota",
+    "Model": "Land Cruiser",
+    "Tank-Size": 24.6
+  },
+  {
+    "Year": 2017,
+    "Make": "Toyota",
+    "Model": "Sequoia",
+    "Tank-Size": 26.4
+  },
+  {
+    "Year": 2008,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2009,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2010,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2011,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2012,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2013,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2014,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2015,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2016,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2017,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2018,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2019,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2020,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2021,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2022,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2023,
+    "Make": "Buick",
+    "Model": "Enclave",
+    "Tank-Size": 22,
+    "Liters": 83
+  },
+  {
+    "Year": 2016,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2017,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2018,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2019,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2020,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2021,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2022,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  },
+  {
+    "Year": 2023,
+    "Make": "Buick",
+    "Model": "Cascada",
+    "Tank-Size": 14,
+    "Liters": 54
+  }
+]
