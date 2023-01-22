@@ -30,8 +30,9 @@
                 ></v-select
               ></v-col>
             </v-row>
+            <h5 class="text--h6">Car not listed? Manually enter tank size:</h5>
             <v-text-field
-              v-model="getGasTank"
+              v-model="tankSize"
               label="Gas Tank Size"
               hint="Gallons"
               placeholder="22"
@@ -64,9 +65,19 @@
                   outlined
                 ></v-text-field>
 
+                <h4 class="text--h6">Price to Fill Up:</h4>
                 <v-banner outlined>{{
                   calculatedPrice(tankSize, currentTank, priceModels[idx])
                 }}</v-banner>
+
+                <h4 class="text--h6">Price Rounded Up:</h4>
+                <v-banner outlined
+                  >{{
+                    Math.ceil(
+                      calculatedPrice(tankSize, currentTank, priceModels[idx])
+                    )
+                  }}.00</v-banner
+                >
               </v-col>
             </v-row>
           </v-form>
@@ -147,6 +158,12 @@ export default {
       set(v) {
         this.setTankLevel(v)
       },
+    },
+  },
+  watch: {
+    getGasTank(v) {
+      // this.getGasTank
+      this.tankSize = v
     },
   },
 

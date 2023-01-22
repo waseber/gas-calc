@@ -21,14 +21,16 @@ export const getters = {
   getMakes(state) {
     const returnArr = []
     state.carList.forEach((x) => {
-      if (!returnArr.includes(x.Make)) returnArr.push(x.Make)
+      if (x.Year === state.selectedYear)
+        if (!returnArr.includes(x.Make)) returnArr.push(x.Make)
     })
     return returnArr.sort()
   },
   getModels(state) {
     const returnArr = []
     state.carList.forEach((x) => {
-      if (!returnArr.includes(x.Model)) returnArr.push(x.Model)
+      if (x.Year === state.selectedYear && x.Make === state.selectedMake)
+        if (!returnArr.includes(x.Model)) returnArr.push(x.Model)
     })
     return returnArr.sort()
   },
