@@ -30,7 +30,6 @@
                 ></v-select
               ></v-col>
             </v-row>
-            <h5 class="text--h6">Car not listed? Manually enter tank size:</h5>
             <v-text-field
               v-model="tankSize"
               label="Gas Tank Size"
@@ -39,6 +38,7 @@
               outlined
             ></v-text-field>
 
+            <h5 class="text--h6">Car not listed? Manually enter tank size.</h5>
             <v-slider
               v-model="tankLevel"
               :tick-labels="tankTicksLabels"
@@ -55,7 +55,12 @@
               ticks="always"
             ></v-slider>
             <v-row>
-              <v-col v-for="(s, idx) in numberOfStations" :key="idx">
+              <v-col
+                v-for="(s, idx) in numberOfStations"
+                :key="idx"
+                cols="6"
+                :md="stationCols"
+              >
                 <h4>Station {{ stationsArr[idx] }}</h4>
 
                 <v-text-field
@@ -159,6 +164,9 @@ export default {
         this.setTankLevel(v)
       },
     },
+    stationCols() {
+      return 12 / this.numberOfStations
+    },
   },
   watch: {
     getGasTank(v) {
@@ -181,7 +189,6 @@ export default {
   },
   mounted() {
     this.loadCarList()
-    console.log('>> ', this.carList)
   },
 }
 </script>

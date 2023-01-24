@@ -15,7 +15,7 @@ export const getters = {
     state.carList.forEach((x) => {
       if (!returnArr.includes(x.Year)) returnArr.push(x.Year)
     })
-    return returnArr.reverse()
+    return returnArr.sort((a, b) => b - a)
   },
 
   getMakes(state) {
