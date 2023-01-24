@@ -3,7 +3,7 @@
     <v-app-bar :clipped-left="clipped" fixed app>
       <div class="d-flex align-end flex-wrap">
         <h1 class="text-h4">Is it Worth it?</h1>
-        <h6 class="text-h5">
+        <h6 class="text-md-h5">
           <em>See if saving a few cents per gallon is actually worth it.</em>
         </h6>
       </div>
