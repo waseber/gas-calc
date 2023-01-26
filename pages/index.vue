@@ -4,87 +4,98 @@
       <v-col>
         <v-card>
           <v-form>
-            <v-row>
-              <v-col cols="12" md="4">
-                <v-select
-                  v-model="currentYear"
-                  :items="getYears"
-                  label="Year"
-                  outlined
-                ></v-select
-              ></v-col>
-              <v-col cols="12" md="4">
-                <v-select
-                  v-model="currentMake"
-                  :items="getMakes"
-                  label="Make"
-                  outlined
-                ></v-select
-              ></v-col>
-              <v-col cols="12" md="4">
-                <v-select
-                  v-model="currentModel"
-                  :items="getModels"
-                  label="Model"
-                  outlined
-                ></v-select
-              ></v-col>
-            </v-row>
-            <v-text-field
-              v-model="tankSize"
-              label="Gas Tank Size"
-              hint="Gallons"
-              placeholder="22"
-              outlined
-            ></v-text-field>
+            <v-banner
+              rounded
+              shaped
+              tile
+              color="blue-grey darken-2"
+              class="mb-3"
+            >
+              <h4>Your Car</h4>
+              <v-row>
+                <v-col cols="12" md="4">
+                  <v-select
+                    v-model="currentYear"
+                    :items="getYears"
+                    label="Year"
+                    outlined
+                  ></v-select
+                ></v-col>
+                <v-col cols="12" md="4">
+                  <v-select
+                    v-model="currentMake"
+                    :items="getMakes"
+                    label="Make"
+                    outlined
+                  ></v-select
+                ></v-col>
+                <v-col cols="12" md="4">
+                  <v-select
+                    v-model="currentModel"
+                    :items="getModels"
+                    label="Model"
+                    outlined
+                  ></v-select
+                ></v-col>
+              </v-row>
+              <v-text-field
+                v-model="tankSize"
+                label="Gas Tank Size"
+                hint="Gallons. Car not listed? Manually enter tank size."
+                persistent-hint
+                placeholder="22"
+                outlined
+              ></v-text-field>
 
-            <h5 class="text--h6">Car not listed? Manually enter tank size.</h5>
-            <v-slider
-              v-model="tankLevel"
-              :tick-labels="tankTicksLabels"
-              :max="8"
-              step="1"
-              ticks="always"
-            ></v-slider>
-            <h4>How many prices to compare?</h4>
-            <v-slider
-              v-model="stations"
-              :tick-labels="stationTickLabels"
-              :max="3"
-              step="1"
-              ticks="always"
-            ></v-slider>
-            <v-row>
-              <v-col
-                v-for="(s, idx) in numberOfStations"
-                :key="idx"
-                cols="6"
-                :md="stationCols"
-              >
-                <h4>Station {{ stationsArr[idx] }}</h4>
-
-                <v-text-field
-                  v-model="priceModels[idx]"
-                  label="Price Per Gallon"
-                  placeholder="2.99"
-                  outlined
-                ></v-text-field>
-
-                <h4 class="text--h6">Price to Fill Up:</h4>
-                <v-banner outlined>{{
-                  calculatedPrice(tankSize, currentTank, priceModels[idx])
-                }}</v-banner>
-
-                <h4 class="text--h6">Price Rounded Up:</h4>
-                <v-banner outlined
-                  >{{
-                    Math.ceil(
-                      calculatedPrice(tankSize, currentTank, priceModels[idx])
-                    )
-                  }}.00</v-banner
+              <v-slider
+                v-model="tankLevel"
+                :tick-labels="tankTicksLabels"
+                :max="8"
+                step="1"
+                ticks="always"
+              ></v-slider>
+            </v-banner>
+            <v-banner color="blue-grey darken-2" rounded shaped tile>
+              <h4>How many prices to compare?</h4>
+              <v-slider
+                v-model="stations"
+                :tick-labels="stationTickLabels"
+                :max="3"
+                step="1"
+                ticks="always"
+              ></v-slider>
+              <v-row>
+                <v-col
+                  v-for="(s, idx) in numberOfStations"
+                  :key="idx"
+                  cols="6"
+                  :md="stationCols"
                 >
-              </v-col>
-            </v-row>
+                  <h4>Station {{ stationsArr[idx] }}</h4>
+
+                  <v-text-field
+                    v-model="priceModels[idx]"
+                    label="Price Per Gallon"
+                    placeholder="2.99"
+                    outlined
+                  ></v-text-field>
+
+                  <h4 class="text--h6">Price to Fill Up:</h4>
+                  <v-banner outlined>{{
+                    calculatedPrice(tankSize, currentTank, priceModels[idx])
+                  }}</v-banner>
+
+                  <h4 class="text--h6">Price Rounded Up:</h4>
+                  <v-banner outlined
+                    >{{
+                      Math.ceil(
+                        calculatedPrice(tankSize, currentTank, priceModels[idx])
+                      )
+                    }}.00</v-banner
+                  >
+                </v-col>
+              </v-row>
+            </v-banner>
           </v-form>
         </v-card>
       </v-col>
