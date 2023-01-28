@@ -81,12 +81,12 @@
                   ></v-text-field>
 
                   <h4 class="text--h6">Price to Fill Up:</h4>
-                  <v-banner outlined>{{
+                  <v-banner color="white" light>{{
                     calculatedPrice(tankSize, currentTank, priceModels[idx])
                   }}</v-banner>
 
                   <h4 class="text--h6">Price Rounded Up:</h4>
-                  <v-banner outlined
+                  <v-banner color="white" light
                     >{{
                       Math.ceil(
                         calculatedPrice(tankSize, currentTank, priceModels[idx])
